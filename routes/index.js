@@ -17,7 +17,7 @@ router.get('/convert', function(req, res, next){
   exchangeRate(toCurrency).then(function( response ) {
     let data = response.data 
     let exchangeRate = data.rates[toCurrency]
-    let convertedAmount = dollars / exchangeRate
+    let convertedAmount = dollars * exchangeRate
 
     let shortConvertedAmount = convertedAmount.toFixed(3) // 3 decimal places
 
